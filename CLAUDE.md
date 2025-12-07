@@ -7,6 +7,7 @@
 **Current Phase:** Customer Discovery
 
 **North Star:** [One sentence - the ultimate measure of success]
+<!-- Example: "10k weekly active users converting at 5%" or "Process 1M events/day at <100ms p99" -->
 
 ## How to Work With Human
 
@@ -20,7 +21,7 @@
 
 - Use TodoWrite for progress tracking
 - Ask questions via AskUserQuestion
-- Write large changes to files, not terminal
+- Write multi-line code/content to files (use Edit/Write tools), not terminal echo/cat
 - Keep terminal updates to 1-2 sentences
 
 **Artifacts:**
@@ -33,8 +34,8 @@
 ```sh
 /project-root/
    codebase/
-      [platform1]/         # [portal] - E.g., Next.js + TypeScript
-      [platform2]/         # [backend] - E.g., FastAPI + Python
+      [platform1]/         # E.g., webapp portal (Next.js + TypeScript)
+      [platform2]/         # E.g., backend service (FastAPI + Python)
    .claude/
       agents/              # Custom agent definitions
       commands/            # Custom slash commands
@@ -51,20 +52,7 @@
 
 ## Creating Content for Humans
 
-**`/for-human/learning/`** - Tutorials/guides for complex concepts or synthesized research
-
-- Naming: `[domain].topic.md` (e.g., `product-design.process.md`, `engineering.testing.md`)
-
-**`/for-human/manuals/`** - How-to guides for tools/processes humans maintain
-
-**`/for-human/tasks/`** - Action items requiring human decision or follow-up
-
-- `todo.md` and `todo.completed.md` are human's personal roadmap - agents NEVER modify these
-- Agents create topic-specific task files: `setup.md`, `testing.md`, `[feature].md`
-- Keep files small and focused (better clarity and effectiveness)
-- Use same priority structure as todo.md (High/Medium/Low Priority)
-
-Keep all content concise (no comprehensive guides). Notify human, clear next steps, plain language, flag urgency.
+See `/docs/for-human.md` for detailed rules on creating learning materials, manuals, and task files.
 
 ## Specialized Agent Context
 
