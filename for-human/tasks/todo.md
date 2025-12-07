@@ -15,6 +15,10 @@
 - [ ] Design Product Design Lead
   - it can generate spec file
   - it can generate wireframe
+- release manager
+  - [x]atomic commit
+  - [x]phase transition
+  - [] colloberation with codebase agents
 
 ### Medium Priority
 
