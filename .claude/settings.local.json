@@ -4,7 +4,8 @@
       "Bash(find:*)",
       "Bash(git rev-parse:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": []
