@@ -16,7 +16,7 @@ created: YYYY-MM-DD
 
 **Date:** YYYY-MM-DD
 
-> **TL;DR:** [3 sentences: What did we decide? Why? What's the impact?]
+> **TL;DR:** [3 sentences: What did we decide? Why? What's the impact?. It has to be comprehensible like a new way]
 
 ---
 
