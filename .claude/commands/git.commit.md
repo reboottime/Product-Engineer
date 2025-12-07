@@ -9,6 +9,6 @@ Commits follow **phase-specific workflow** (detected from `CLAUDE.md`):
 
 Use the Task tool with `subagent_type: release-manager`
 
-**Prompt**: "Execute Workflow A (Commit & Push). Detect phase from CLAUDE.md, run pre-flight checks, commit all changes with message: $ARGUMENTS, push following phase-specific strategy, and report results."
+**Prompt**: "Execute Workflow A (Commit & Push). Detect phase from CLAUDE.md, run pre-flight checks, analyze staged/unstaged changes for atomic commits (following git-conventions.md line 92), create separate commits for each logical change with message incorporating: $ARGUMENTS, push following phase-specific strategy, and report results."
 
-Follow conventions in `docs/technical/git-conventions.md`
+**Critical:** Enforce atomic commits - split unrelated changes into separate commits following `docs/technical/git-conventions.md`
