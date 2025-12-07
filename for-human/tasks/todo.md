@@ -10,7 +10,8 @@
 ### High Priority
 
 - [ ] configure communication style with claude-code
-  - [x] configure the trigger in updating `for-human` folder
+  - [x] configure the learning trigger in updating `for-human` folder
+  - [ ] configure how todo trigger in updating `for-human` folder
 - [ ] Design Product Design Lead
   - it can generate spec file
   - it can generate wireframe
