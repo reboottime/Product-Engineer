@@ -1,37 +1,32 @@
-# Team Conventions
+---
+description: Project-specific git conventions and phase-based workflows
+tags: [git, conventions, workflow, commits, pr, phase]
+applies_to: All team members (human and AI agents)
+status: Active
+last_updated: 2025-12-07
+---
 
-**Status:** Active
-**Applies to:** All team members (human and ai agents, etc.)
-**Last Updated:** 2025-12-06
+# Team Git Conventions
 
-## Overview
-
-This document defines **project-specific** team conventions. Follow these rules for git workflow, commits, and PRs. General best practices (conventional commits, clean git history, etc.) are assumed knowledge.
-
-**Current Sections:**
-
-- Phase-Specific Workflows (adapts to project maturity)
-- Git Workflow (branching, commits, PRs)
-- *(More sections added as team practices evolve)*
+Project-specific git conventions. General best practices assumed.
 
 ---
 
-# Phase-Specific Workflows
+## Phase-Specific Workflows
 
-Your git workflow adapts based on **Current Phase** in `CLAUDE.md` line 7. This ensures the right balance of speed vs. rigor at each stage.
+Git workflow adapts based on **Current Phase** in `CLAUDE.md` line 7.
 
-## Customer Discovery
+### Customer Discovery
 
 **Philosophy:** Learn, don't ship code yet
 
 **Workflow:**
 
 - ✅ Documentation commits encouraged
-- ✅ Auto-push to main (share learnings with team)
+- ✅ Auto-push to main (share learnings)
 - ⚠️ Code changes trigger warning (focus on research)
-- 📝 Capture: Interview notes, assumptions, market research
 
-## POC (Proof of Concept)
+### POC (Proof of Concept)
 
 **Philosophy:** Just ship. Speed > process.
 
@@ -43,18 +38,7 @@ Your git workflow adapts based on **Current Phase** in `CLAUDE.md` line 7. This 
 - ❌ No branch requirement
 - ⚠️ Secret detection still active
 
-**Example commit:**
-
-```sh
-feat(poc): add basic JWT auth
-
-Quick validation of token-based approach.
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
-
-## MVP
+### MVP
 
 **Philosophy:** Get users using it. Quality matters.
 
@@ -66,13 +50,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 - ❌ Never push to main directly (PR merge only)
 - ✅ PR template enforced
 
-**When to use:**
-
-- Real users depending on the product
-- Need for review and discussion
-- Balance speed with stability
-
-## Production
+### Production
 
 **Philosophy:** Reliability > speed. Users depend on this.
 
@@ -93,15 +71,27 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 ---
 
-# Git Workflow
+## Commit Strategy
 
-## Key Principles
+### Feature vs Atomic Commits
 
-- **Atomic Commits**: Each commit should represent a single logical change
-- **Meaningful Messages**: Commit messages should explain why, not just what changed
-- **Clean History**: Keep git history linear and easy to follow
-- **Automatic but Safe**: Automate commits but never force push or overwrite history without explicit permission
-- **Branch Awareness**: Always know which branch you're on and follow the project's branching strategy
+**Feature commits (preferred):**
+
+Group related changes that implement one logical feature/fix together.
+
+- Use when: Changes should be reverted together, implementing one feature, fixing one bug
+- Example: Dark mode (CSS + JS + config + tests) = 1 commit
+
+**Atomic commits:**
+
+Split unrelated changes into separate commits.
+
+- Use when: Changes are truly independent, different bugs fixed in one session
+- Example: Fixed bug A + Fixed bug B + Updated deps = 3 commits
+
+**Rule:** Prefer feature commits (clearer history, easier review). Use atomic commits only for truly independent changes.
+
+---
 
 ## Security Rules (Required)
 
@@ -114,6 +104,8 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 - Database connection strings with credentials
 
 **If accidentally committed:** Rotate the secret immediately and use `git filter-branch` or BFG Repo-Cleaner to remove from history.
+
+---
 
 ## Branch Naming (Required)
 
@@ -129,11 +121,13 @@ hotfix/short-description     # Urgent production fixes
 - `bugfix/login-redirect-loop`
 - `hotfix/critical-security-patch`
 
+---
+
 ## Commit Message Format (Required)
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) with **required Claude Code footer**:
 
-```sh
+```
 type(scope): Short description (max 72 chars)
 
 Optional body explaining why (not what).
@@ -156,108 +150,56 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 | `chore` | Maintenance tasks, dependencies, config | `chore(deps): update react to 18.3` |
 | `merge` | Merging branches | `merge: feature/auth into main` |
 
-### Examples
+---
 
-```bash
-feat(auth): add JWT authentication
+## Push Strategy
 
-Implements authentication using JWT tokens with 7-day expiration.
-Users stay logged in across sessions.
+**Phase-specific rules** (see Phase-Specific Workflows above):
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+- **Discovery/POC:** Auto-push to main
+- **MVP/Production:** Never push to main directly (PR only)
+- **Feature branches:** Auto-push after commit (all phases)
 
-Co-Authored-By: Claude <noreply@anthropic.com>
+---
+
+## Reporting to Human (Required)
+
+**All agents performing git operations MUST report actions explicitly:**
+
+**Push actions:**
+
+- ✅ **PUSHED:** "✅ PUSHED to [branch]" or "✅ PUSHED to origin/[branch]"
+- ✅ **NOT PUSHED:** "✅ COMMITTED (not pushed)" or "✅ COMMITTED ONLY (not pushed)"
+
+**Include in report:**
+
+- Files changed (count or list)
+- Commit hash (short form)
+- Remote impact (pushed to origin or local only)
+- Branch name
+
+**Example:**
+
+```
+✅ PUSHED to origin/main
+- Commit: abc1234
+- Files: 3 (auth.ts, login.tsx, README.md)
+- Impact: Remote repository updated
 ```
 
-```bash
-fix(login): resolve redirect loop on logout
+**Rationale:** Humans need visibility into git operations, especially actions affecting remote repositories. This is a collaboration contract between agents and humans.
 
-Added session cleanup to prevent stale tokens causing redirect loops.
+---
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+## PR Requirements (Phase-Aware)
 
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
+**MVP:** Summary, Why, Test Plan, Screenshots
 
-## Push Strategy (Default Behavior)
+**Production:** Above + Rollback Plan, Deployment Notes, Performance Assessment
 
-**Feature/bugfix/hotfix branches:**
-
-- ✅ Automatically push after commit
-- Enables backup and team visibility
-
-**Main/master branch:**
-
-- ⚠️ Commit locally, ask before pushing
-- Typically push via PR merge, not direct commits
-
-## PR Template (Phase-Aware)
-
-**MVP Template:**
-
-```markdown
-## Summary
-- Bullet points of what changed
-
-## Why
-Brief explanation of the problem this solves
-
-## Test Plan
-- [ ] Tested on mobile viewport
-- [ ] Tested on desktop viewport
-- [ ] TypeScript builds without errors
-- [ ] No console errors
-
-## Screenshots (if UI changes)
-[Add screenshots]
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-```
-
-**Production Template (Enhanced):**
-
-```markdown
-## Summary
-- Bullet points of what changed
-
-## Why
-Brief explanation of the problem this solves + user impact
-
-## Test Plan
-- [ ] Unit tests pass
-- [ ] Integration tests pass
-- [ ] Tested in staging environment
-- [ ] Performance impact assessed
-- [ ] Error monitoring configured
-
-## Rollback Plan
-[Steps to revert if this causes issues]
-
-## Deployment Notes
-[Any special deployment considerations, database migrations, etc.]
-
-## Screenshots (if UI changes)
-[Add screenshots]
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-```
+**Templates:** See `docs/technical/templates/pr-{mvp|production}.md`
 
 **Note:** POC phase doesn't require PRs (direct commits preferred).
-
-## Special Cases
-
-### Hotfixes (Production Emergencies)
-
-1. Create `hotfix/description` branch from main/master
-2. Fix with minimal changes
-3. Get expedited review
-4. Merge and deploy immediately
-5. Communicate to team
-
-### Merge Conflicts
-
-- Resolve in your editor, test thoroughly
-- For complex conflicts, ask release-manager for help
 
 ---
 

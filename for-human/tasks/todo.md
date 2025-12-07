@@ -24,6 +24,7 @@
 - release manager
   - [x]atomic commit
   - [x]phase transition
+  - [ ] feature commit vs atomic commit to real world engineering practice
   - [ ] colloberation between codebase agents
 
 ### Medium Priority

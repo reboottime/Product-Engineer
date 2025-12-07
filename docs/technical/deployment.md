@@ -16,12 +16,14 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 **Strategy:** No deployment (research phase)
 
 **Activities:**
+
 - Document findings, not code
 - Prototype ideas in design tools
 - Validate assumptions with customers
 - No production systems yet
 
 **Deliverables:**
+
 - Customer interview notes
 - Problem/solution validation
 - Market research
@@ -34,17 +36,20 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 **Strategy:** Manual, ad-hoc deployment
 
 **When to deploy:**
+
 - When ready to test technical feasibility
 - When validating a specific approach
 - No formal schedule
 
 **Process:**
+
 1. Commit to main (auto-pushed)
 2. Deploy manually when needed
 3. Test the hypothesis
 4. Document what worked/didn't work
 
 **Checklist:**
+
 - [ ] Core functionality works
 - [ ] Technical approach validated
 - [ ] Breaking changes documented
@@ -60,11 +65,13 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 **Strategy:** Continuous deployment with safety nets
 
 **When to deploy:**
+
 - Auto-deploy on merge to main (if CI configured)
 - After PR approval
 - During low-traffic windows for major changes
 
 **Process:**
+
 1. Create feature branch
 2. Open PR with test plan
 3. Review and approve
@@ -73,6 +80,7 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 6. Monitor for errors post-deploy
 
 **Checklist:**
+
 - [ ] PR approved
 - [ ] Tests pass locally
 - [ ] TypeScript builds without errors
@@ -80,11 +88,13 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 - [ ] Changes tested in target environments
 
 **Monitoring:**
+
 - Check error logs post-deploy (15-30 min)
 - User feedback channels monitored
 - Basic analytics to detect issues
 
 **Rollback:**
+
 - Keep previous version ready
 - Document how to revert (usually: revert commit + redeploy)
 - Rollback time target: < 30 minutes
@@ -96,12 +106,14 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 **Strategy:** Staged rollout with comprehensive monitoring
 
 **When to deploy:**
+
 - During scheduled deployment windows
 - After staging validation
 - With rollback plan documented
 - Team available for monitoring
 
 **Process:**
+
 1. Feature branch → PR with enhanced template
 2. PR review (consider: require approval)
 3. Merge to main
@@ -112,6 +124,7 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 8. Confirm stability before moving on
 
 **Pre-Deployment Checklist:**
+
 - [ ] PR approved by reviewer
 - [ ] All tests pass (unit + integration)
 - [ ] Staging deployment successful
@@ -123,6 +136,7 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 - [ ] Team available for post-deploy monitoring
 
 **Post-Deployment Checklist:**
+
 - [ ] Core user flows tested in production
 - [ ] Error rates normal (< baseline + 5%)
 - [ ] Performance metrics stable
@@ -130,18 +144,21 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 - [ ] Monitoring alerts configured
 
 **Monitoring:**
+
 - Real-time error tracking
 - Performance metrics (response times, load)
 - User analytics (drop-offs, conversions)
 - Server health (CPU, memory, disk)
 
 **Rollback:**
+
 - Documented per-deployment
 - Tested in staging
 - Rollback time target: < 15 minutes
 - Include: Code revert, DB rollback (if needed), cache clear
 
 **Incident Response:**
+
 - On-call rotation (if team size allows)
 - Escalation path documented
 - Post-mortem for production incidents
@@ -151,24 +168,31 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 ## Deployment Environments
 
 ### POC
+
 **Environments:**
+
 - Development (local)
 - Optional: Single test environment
 
 ### MVP
+
 **Environments:**
+
 - Development (local)
 - Production
 
 **Note:** Staging optional but recommended if budget allows
 
 ### Production
+
 **Environments:**
+
 - Development (local)
 - Staging (required - production mirror)
 - Production
 
 **Staging requirements:**
+
 - Matches production configuration
 - Uses production-like data (anonymized)
 - Accessible for testing before prod deploy
@@ -178,23 +202,28 @@ Deployment strategy adapts to project phase (defined in `CLAUDE.md` line 7). Eac
 ## CI/CD Configuration
 
 ### POC
+
 **CI/CD:** Not required
 
 Manual deployment is fine. Focus on validating ideas, not automation.
 
 ### MVP
+
 **CI/CD:** Recommended (optional)
 
 **Benefits:**
+
 - Auto-run tests on PR
 - Auto-deploy on merge (with manual gate)
 - Catch errors before production
 
 **Suggested tools:**
+
 - GitHub Actions (simple, free tier)
 - Vercel/Netlify (frontend auto-deploy)
 
 **Minimal pipeline:**
+
 ```yaml
 # Example: .github/workflows/ci.yml
 on: [pull_request]
@@ -209,9 +238,11 @@ jobs:
 ```
 
 ### Production
+
 **CI/CD:** Required
 
 **Pipeline stages:**
+
 1. **Test:** Unit + integration tests
 2. **Build:** Compile/bundle application
 3. **Deploy Staging:** Auto-deploy to staging on main merge
@@ -220,6 +251,7 @@ jobs:
 6. **Monitor:** Post-deploy health checks
 
 **Required checks:**
+
 - All tests pass
 - Build succeeds
 - No security vulnerabilities (dependency scan)
@@ -232,6 +264,7 @@ jobs:
 **Check `CLAUDE.md` line 7 for current phase.**
 
 When phase changes, update:
+
 1. Deployment process (manual → automated → staged)
 2. Monitoring requirements
 3. Rollback procedures
@@ -244,11 +277,13 @@ When phase changes, update:
 ### Hotfix Deployment (Production)
 
 **When to use:**
+
 - Critical bug affecting users
 - Security vulnerability discovered
 - Data integrity issue
 
 **Fast-track process:**
+
 1. Create `hotfix/description` branch
 2. Make minimal fix
 3. Get expedited review (can be post-deploy if critical)
@@ -257,6 +292,7 @@ When phase changes, update:
 6. Communicate to team
 
 **Post-hotfix:**
+
 - Document what happened
 - Create follow-up tasks to prevent recurrence
 - Update monitoring to catch similar issues
