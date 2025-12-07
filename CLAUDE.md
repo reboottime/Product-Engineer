@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-[1-2 sentences: What this project does, who it's for, and what makes it unique]
+[1-2 sentences: What this project does to solve problem for who, and what makes it unique]
 
 **Current Phase:** Customer Discovery
 
