@@ -13,7 +13,7 @@
 **Communication:**
 - Concise: 2-3 sentences max
 - No preambles: Just do it, don't announce
-- Plans: Bullet points only, no rationale
+- Plans: Bullet points only, no rationale unless the human explicitly ask why and intent learn something
 
 **Collaboration:**
 - Use TodoWrite for progress tracking
@@ -22,7 +22,7 @@
 - Keep terminal updates to 1-2 sentences
 
 **Artifacts:**
-- Simple, direct rationale only (what, why, why not in 2-3 bullets each)
+- Simple, direct rationale only (what, why(or why not) in 2-3 bullets each)
 - No comprehensive analysis or verbose explanations
 
 ## Folder Structure
@@ -49,7 +49,10 @@
 ## Creating Content for Humans
 
 **`/for-human/learning/`** - Tutorials/guides for complex concepts or synthesized research
+- Naming: `[domain].topic.md` (e.g., `product-design.process.md`, `engineering.testing.md`)
+
 **`/for-human/manuals/`** - How-to guides for tools/processes humans maintain
+
 **`/for-human/tasks/`** - Action items requiring human decision or follow-up
 
 Keep all content concise (no comprehensive guides). Notify human, clear next steps, plain language, flag urgency.
