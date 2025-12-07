@@ -12,13 +12,17 @@
 - [ ] configure communication style with claude-code
   - [x] configure the learning trigger in updating `for-human` folder
   - [ ] configure how todo trigger in updating `for-human` folder
+- [ ] Product Manager
+  - [ ] generate prd
+  - [ ] help design product design lead agent
 - [ ] Design Product Design Lead
-  - it can generate spec file
-  - it can generate wireframe
+  - [ ] it can generate spec file
+  - [ ] it can generate wireframe
+  - [ ] generate design system
 - release manager
   - [x]atomic commit
   - [x]phase transition
-  - [] colloberation with codebase agents
+  - [ ] colloberation with codebase agents
 
 ### Medium Priority
 
