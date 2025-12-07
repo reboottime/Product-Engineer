@@ -7,7 +7,8 @@
       "Bash(git commit:*)",
       "Bash(git reset:*)",
       "Bash(git push:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git mv:*)"
     ],
     "deny": [],
     "ask": []
