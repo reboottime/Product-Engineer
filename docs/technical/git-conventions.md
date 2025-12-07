@@ -25,6 +25,7 @@ Your git workflow adapts based on **Current Phase** in `CLAUDE.md` line 7. This 
 **Philosophy:** Learn, don't ship code yet
 
 **Workflow:**
+
 - ✅ Documentation commits encouraged
 - ⚠️ Code changes trigger warning (focus on research)
 - 📝 Capture: Interview notes, assumptions, market research
@@ -34,6 +35,7 @@ Your git workflow adapts based on **Current Phase** in `CLAUDE.md` line 7. This 
 **Philosophy:** Just ship. Speed > process.
 
 **Workflow:**
+
 - ✅ Direct commits to main allowed
 - ✅ Auto-push to main (no permission needed)
 - ❌ No PR required
@@ -41,7 +43,8 @@ Your git workflow adapts based on **Current Phase** in `CLAUDE.md` line 7. This 
 - ⚠️ Secret detection still active
 
 **Example commit:**
-```
+
+```sh
 feat(poc): add basic JWT auth
 
 Quick validation of token-based approach.
@@ -55,13 +58,15 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 **Philosophy:** Get users using it. Quality matters.
 
 **Workflow:**
+
 - ✅ Branches required (`feature/*`, `bugfix/*`, `hotfix/*`)
 - ✅ PRs required for main
 - ✅ Auto-push feature branches
-- ⚠️ Ask before pushing to main
+- ❌ Never push to main directly (PR merge only)
 - ✅ PR template enforced
 
 **When to use:**
+
 - Real users depending on the product
 - Need for review and discussion
 - Balance speed with stability
@@ -71,13 +76,15 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 **Philosophy:** Reliability > speed. Users depend on this.
 
 **Workflow:**
+
 - ✅ All MVP requirements PLUS:
 - ✅ CI checks enforced (warn if not configured)
 - ✅ Enhanced PR template (rollback plan required)
-- ⚠️ Never auto-push to main (always ask permission)
+- ❌ Never push to main directly (PR merge only, no exceptions)
 - ✅ Consider: Release tags, changelogs
 
 **Enhanced PR requirements:**
+
 - Rollback plan documented
 - Test coverage checked
 - Performance impact assessed
@@ -125,7 +132,7 @@ hotfix/short-description     # Urgent production fixes
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) with **required Claude Code footer**:
 
-```
+```sh
 type(scope): Short description (max 72 chars)
 
 Optional body explaining why (not what).
