@@ -27,6 +27,7 @@ Your git workflow adapts based on **Current Phase** in `CLAUDE.md` line 7. This 
 **Workflow:**
 
 - ✅ Documentation commits encouraged
+- ✅ Auto-push to main (share learnings with team)
 - ⚠️ Code changes trigger warning (focus on research)
 - 📝 Capture: Interview notes, assumptions, market research
 
