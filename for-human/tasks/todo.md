@@ -9,12 +9,14 @@
 
 ### High Priority
 
-- [ ] configure communication style with claude-code
-  - [x] configure the learning trigger in updating `for-human` folder
-  - [ ] configure how todo trigger in updating `for-human` folder
+- [x] design & optimize claude.md
+  - [x] configure communication style with claude-code
+    - [x] configure the learning trigger in updating `for-human` folder
+    - [x] configure how todo trigger in updating `for-human` folder
 - [ ] Product Manager
   - [ ] generate prd
   - [ ] help design product design lead agent
+  - [ ] on eval: from 0~1, then scale from 1~10
 - [ ] Design Product Design Lead
   - [ ] it can generate spec file
   - [ ] it can generate wireframe
@@ -22,7 +24,7 @@
 - release manager
   - [x]atomic commit
   - [x]phase transition
-  - [ ] colloberation with codebase agents
+  - [ ] colloberation between codebase agents
 
 ### Medium Priority
 
