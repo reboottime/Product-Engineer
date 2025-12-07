@@ -14,6 +14,7 @@ Automate git workflows following team standards in `/docs/technical/git-conventi
 ## Initialization (run once per invocation)
 
 **Load conventions:**
+
 - Read `/docs/technical/git-conventions.md` → extract:
   - Allowed commit types (feat, fix, docs, etc.)
   - Branch naming patterns
@@ -22,6 +23,7 @@ Automate git workflows following team standards in `/docs/technical/git-conventi
   - Security rules
 
 **Detect phase:**
+
 - Read `CLAUDE.md` → extract `**Current Phase:** [value]`
 - Normalize: `discovery` | `poc` | `mvp` | `production`
 - Default: `mvp` if not found
@@ -34,12 +36,14 @@ Automate git workflows following team standards in `/docs/technical/git-conventi
 Run `git status` and validate:
 
 **Universal blockers:**
+
 - ❌ Detached HEAD → `💡 Fix: git checkout -b feature/branch-name`
 - ❌ Merge conflicts → `💡 Resolve conflicts in: [files]`
 - ❌ No changes → Exit (nothing to commit)
 - ❌ Secrets detected → List files, refuse unless user confirms
 
 **Phase-specific checks:**
+
 - **Discovery:** Code changes? → `⚠️ Discovery phase - prefer docs/research commits`
 - **POC:** Allow any branch (including main)
 - **MVP/Production:** Validate branch name against conventions → `💡 Use: feature/*, bugfix/*, hotfix/*`
@@ -72,6 +76,7 @@ EOF
 ```
 
 **Pre-commit hook handling:**
+
 - Hook failed + modified files?
   - Check: `git log -1 --format='%an %ae'` (is this my commit?)
   - Check: Not yet pushed?
@@ -81,6 +86,7 @@ EOF
 **4. Push (phase-aware)**
 
 Get push rules from conventions doc for current phase:
+
 - **Discovery:** Auto-push docs only
 - **POC:** Auto-push all (including main)
 - **MVP:** Auto-push feature branches, ask for main
@@ -89,6 +95,7 @@ Get push rules from conventions doc for current phase:
 Respect user override ("don't push" → skip)
 
 **Push commands:**
+
 ```bash
 # New branch
 git push -u origin [branch]
@@ -98,6 +105,7 @@ git push
 ```
 
 **Error handling:**
+
 - Push rejected by remote → `❌ Remote rejected | 💡 Pull first: git pull --rebase`
 - Authentication failed → `❌ Auth failed | 💡 Check: gh auth status`
 - Committed but push failed → `✅ Committed: [hash] | ❌ Push failed | 💡 Manual push: git push`
@@ -133,6 +141,7 @@ git diff [base]...HEAD
 **3. Generate PR content**
 
 Analyze ALL commits (not just latest):
+
 - Extract: What changed (1-3 bullets)
 - Extract: Why (problem + impact)
 - Generate test plan from conventions PR template
@@ -162,6 +171,7 @@ EOF
 ```
 
 **Template generation logic:**
+
 - Read PR template from conventions doc
 - Add phase-specific sections (POC: minimal, MVP: testing, Production: rollback + deployment)
 - Fill in: Summary, Why, Test Plan from analysis
@@ -175,12 +185,14 @@ EOF
 ## Critical Rules
 
 **REFUSE if:**
+
 - Detached HEAD, merge conflicts, no changes
 - Secrets without user confirmation
 - Invalid commit format (type not in conventions)
 - Attempting to amend another dev's commit
 
 **ALWAYS:**
+
 - Load conventions at start (single source of truth)
 - Detect phase before workflow
 - Validate commit message format
@@ -190,6 +202,7 @@ EOF
 - Analyze ALL commits for PRs
 
 **NEVER:**
+
 - Skip initialization (need conventions + phase)
 - Skip security checks (all phases)
 - Hardcode templates (generate from conventions)
