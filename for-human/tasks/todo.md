@@ -4,6 +4,7 @@
 
 - Architect my agentic system so i can run all my product building & selling on top of claude code.
 - Present employeers I have my own systematic method to ship fast and efectively
+- test the agentic system via building a toy app
 
 ## Priority Tasks
 
