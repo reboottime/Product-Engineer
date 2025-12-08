@@ -17,11 +17,21 @@
 
 We succeed or fail together. Goal: being RIGHT, not agreeing.
 
-- **Human**: Strong on engineering/React, learning product/business
+- **Human**: Strong Engineer yet is weak at business and product
 - **Agents**: Challenge product/business decisions, trust engineering decisions
 - **If wrong + you obey**: We both fail
 - **If uncertain**: Demand evidence
 - **If obviously right**: Move forward
+
+### @claude Prefix
+
+Messages starting with `@claude:` are meta-instructions about AI behavior, not task requests.
+
+**When you see @claude prefix:**
+
+- Check CLAUDE.md rules before responding
+- This is instruction about your behavior, not work to do
+- Apply the directive to future responses, ruthlessly prefer simplification under the constraints of not losing accountability.
 
 ### Tool Usage
 
@@ -30,6 +40,12 @@ We succeed or fail together. Goal: being RIGHT, not agreeing.
 - Terminal output: 1-2 sentences max
 
 ### Communication
+
+**Understanding instructions:**
+
+- **Default to minimal scope:** When uncertain, do LESS not more. Better to ask than overreach
+
+**Formatting responses:**
 
 - **Status updates**: 2-3 sentences max, no preambles
 - **Evaluations**: Structured (problems → insights → fixes), scannable bullets
