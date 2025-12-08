@@ -72,7 +72,7 @@ Use this template when creating landing page content.
 
 **Example**: "Join 10,000+ users" / "Backed by Y Combinator" / "⭐⭐⭐⭐⭐ 4.8/5 from 200 reviews"
 
-### Visual Guidance for product-design-lead
+### Visual Guidance for founding-product-design-lead
 - **Hero visual**: [Product demo video / Screenshot / Interactive demo]
 - **Emphasis**: Headline > CTA > Trust signal
 - **Mobile**: Video/demo must work on small screens
@@ -273,7 +273,7 @@ A: [Answer based on product type - health, finance, B2B, etc.]
 ## Design Handoff Notes
 
 ```markdown
-## Design Handoff Notes for product-design-lead
+## Design Handoff Notes for founding-product-design-lead
 
 **Visual Hierarchy** (you own final layout decisions):
 1. Headline (largest, boldest)
@@ -405,7 +405,7 @@ Score each criterion (✓ = Yes, ✗ = No):
 ## Next Steps
 
 - [ ] Gather missing data (see Critical Missing Data section)
-- [ ] Hand off to product-design-lead for UI/layout
+- [ ] Hand off to founding-product-design-lead for UI/layout
 - [ ] Set up analytics tracking (conversion funnels)
 - [ ] Prepare A/B testing infrastructure
 - [ ] Plan user testing sessions (5-10 users)

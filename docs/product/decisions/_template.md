@@ -5,7 +5,7 @@ feature: [feature-name-kebab-case]
 phase: customer-discovery|poc|mvp|production
 owner: product-manager
 status: draft|review|approved|implemented|superseded
-stakeholders: [product-manager, tech-lead, product-design-lead]
+stakeholders: [founding-product-manager, tech-lead, founding-product-design-lead]
 impact: high|medium|low
 supersedes: []
 last_updated: YYYY-MM-DD

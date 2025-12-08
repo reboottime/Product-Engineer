@@ -6,9 +6,9 @@ tags: [product, design]
 
 # Generate Design Specification
 
-Use the Task tool to invoke the product-design-lead agent to create complete design specification for implementation.
+Use the Task tool to invoke the founding-product-design-lead agent to create complete design specification for implementation.
 
-`subagent_type: product-design-lead`
+`subagent_type: founding-product-design-lead`
 
 **Prompt**: "Create full design spec for $ARGUMENTS.
 

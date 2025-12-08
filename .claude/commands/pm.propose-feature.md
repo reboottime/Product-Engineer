@@ -2,12 +2,12 @@
 description: Propose feature idea - PM & design lead collaborate to evaluate and decide
 argument-hint: [feature-idea-or-scenario]
 tags: [product, feature, collaboration, pm, design]
-agent: product-manager, product-design-lead
+agent: founding-product-manager, founding-product-design-lead
 ---
 
 # Propose Feature
 
-Coordinate a collaborative evaluation between founding-product-manager and product-design-lead to assess a feature idea and reach a decision.
+Coordinate a collaborative evaluation between founding-product-manager and founding-product-design-lead to assess a feature idea and reach a decision.
 
 You are the facilitator. Follow this workflow:
 
@@ -41,7 +41,7 @@ You are the facilitator. Follow this workflow:
    - What would change this decision"
 
    **Design Lead Agent - Independent Analysis:**
-   - Use Task tool with `subagent_type: product-design-lead`
+   - Use Task tool with `subagent_type: founding-product-design-lead`
    - Prompt: "TASK: Engage in at least 3 rounds of independent deliberation on this feature from UX/design perspective. Do NOT see PM's input yet.
 
    FEATURE: $ARGUMENTS

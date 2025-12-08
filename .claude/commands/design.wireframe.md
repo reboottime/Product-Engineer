@@ -6,9 +6,9 @@ tags: [product, design]
 
 # Create Wireframes
 
-Use the Task tool to invoke the product-design-lead agent to create low-fidelity wireframes for the specified feature.
+Use the Task tool to invoke the founding-product-design-lead agent to create low-fidelity wireframes for the specified feature.
 
-`subagent_type: product-design-lead`
+`subagent_type: founding-product-design-lead`
 
 **Prompt**: "Create wireframes for $ARGUMENTS.
 

@@ -6,9 +6,9 @@ tags: [product, design]
 
 # Review Design
 
-Use the Task tool to invoke the product-design-lead agent to review and update an existing design.
+Use the Task tool to invoke the founding-product-design-lead agent to review and update an existing design.
 
-`subagent_type: product-design-lead`
+`subagent_type: founding-product-design-lead`
 
 **Prompt**: "Review and iterate on $ARGUMENTS.
 

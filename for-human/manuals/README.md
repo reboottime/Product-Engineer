@@ -8,8 +8,8 @@ AI agents create step-by-step guides and reference documentation here to help hu
 
 ## Current Materials
 
-- **release-manager.workflow-guide.md** - Git operations, commits, pushes, and PR creation with phase-aware workflows
-- **founding-product-manager.workflow.md** - 0→1 product management from discovery through POC
-- **product-design.workflow-guide.md** - Design process and collaboration workflow
-- **agentic-system-team.md** - Team structure and agent collaboration patterns
-- **agentic-system-roadmap.md** - Roadmap for agentic system development
+Quick-reference guides for working with specialized agents:
+
+- **release-manager.md** - Git operations: commits, pushes, PRs with phase-aware workflows and safety blocks
+- **founding-product-manager.md** - 0→1 product management: discovery, validation, POC workflows with all 14 pm.* commands
+- **product-design-lead.md** - UX design process: flow → wireframes → specs, markdown-based design system
