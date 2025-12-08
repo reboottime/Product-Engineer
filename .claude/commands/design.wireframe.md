@@ -13,12 +13,14 @@ Use the Task tool to invoke the product-design-lead agent to create low-fidelity
 **Prompt**: "Create wireframes for $ARGUMENTS.
 
 **Process:**
+
 1. Read requirement or check if flow exists from /design.flow
 2. Create ASCII wireframes for key screens (2-4 screens max)
 3. Show layout and hierarchy only (no detailed copy yet)
 4. Include component labels (buttons, inputs, cards, etc.)
 
 **Output format:**
+
 ```
 ## Screen: [Name]
 
@@ -33,6 +35,7 @@ Use the Task tool to invoke the product-design-lead agent to create low-fidelity
 ```
 
 **Do NOT:**
+
 - Write detailed microcopy (that's /design.specs)
 - Design all states yet (loading, error, empty)
 - Create full design spec

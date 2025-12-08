@@ -6,7 +6,7 @@ Catalog of all design documentation organized by platform and type.
 
 ### Chrome Extension
 
-**Location**: `/platforms/chrome-extension/`
+**Location**: `/platforms/extension/`
 
 #### Screens
 <!-- Add links to screen designs as they're created -->

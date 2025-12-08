@@ -11,11 +11,13 @@ Designs user experiences using behavior change principles. Outputs markdown-base
 ## Input → Process → Output
 
 ### Takes In
+
 - Requirements file from `/docs/product/requirements/[feature].md` (written by PM)
 - Platform constraints from `CLAUDE.md`
 - Existing design patterns from `/docs/product/design/screens/` for consistency
 
 ### Process
+
 1. **Apply behavior lens** - Identify motivation/ability barriers, friction points, habit loops
 2. **Design flow** - Mermaid diagram for complex flows (4+ steps)
 3. **Create wireframes** - ASCII layouts with component trees (Tailwind classes)
@@ -24,9 +26,11 @@ Designs user experiences using behavior change principles. Outputs markdown-base
 6. **Document rationale** - Cite behavior principles for key decisions
 
 ### Outputs
+
 **Single artifact:** `/docs/product/design/screens/[feature-name].md`
 
 Contains:
+
 - User flow diagram
 - ASCII wireframes
 - Component trees with Tailwind classes
@@ -43,6 +47,7 @@ PM writes requirements → Design Lead produces spec → Engineer implements
 ```
 
 **Design Lead asks you questions only when:**
+
 - Requirements conflict or are ambiguous
 - 2+ equally valid approaches with different tradeoffs
 - Major UX decision with business impact
@@ -52,11 +57,13 @@ PM writes requirements → Design Lead produces spec → Engineer implements
 ## What Makes This Different
 
 **Behavior-first design:**
+
 - Not just layouts - designs for habit formation and behavior change
 - Applies Fogg Behavior Model (Motivation × Ability × Trigger)
 - Uses friction as a feature (e.g., trust-based blocking vs hard blocking)
 
 **Engineer-ready specs:**
+
 - Component trees with actual class names
 - Exact microcopy (not placeholders)
 - All states defined (not just happy path)

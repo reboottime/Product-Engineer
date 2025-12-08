@@ -6,7 +6,7 @@ The design lead agent creates UX specs after PM has validated requirements. This
 
 ## Quick Reference
 
-```
+```sh
 Idea → PM validates → PM writes PRD → Design creates specs → Engineering implements
 ```
 
@@ -15,6 +15,7 @@ Idea → PM validates → PM writes PRD → Design creates specs → Engineering
 ### 1. After PM Writes Requirements
 
 **Prerequisite:** PM has completed `/pm.write-prd [feature-name]`
+
 - Creates `/docs/product/requirements/[feature-name].md`
 - Defines WHAT to build and WHY
 - Includes success metrics and constraints
@@ -24,9 +25,11 @@ Idea → PM validates → PM writes PRD → Design creates specs → Engineering
 ### 2. Design Process (3 Steps)
 
 #### Step 1: User Flow
+
 **Command:** `/design.flow [feature-name]`
 
 **Agent does:**
+
 - Reads `/docs/product/requirements/[feature-name].md`
 - Creates high-level flow (5-10 steps)
 - Shows entry/exit points, decision points, happy/error paths
@@ -37,9 +40,11 @@ Idea → PM validates → PM writes PRD → Design creates specs → Engineering
 ---
 
 #### Step 2: Wireframes
+
 **Command:** `/design.wireframe [feature-name]`
 
 **Agent does:**
+
 - References approved flow
 - Creates ASCII wireframes (2-4 key screens)
 - Shows layout, hierarchy, component labels
@@ -50,9 +55,11 @@ Idea → PM validates → PM writes PRD → Design creates specs → Engineering
 ---
 
 #### Step 3: Full Design Spec
+
 **Command:** `/design.specs [feature-name]`
 
 **Agent does:**
+
 - Reads `Claude.md` for project context
 - Checks `/docs/product/design/guides/principles.md` for design framework
 - References shared components from `/docs/product/design/shared/components/`
@@ -61,6 +68,7 @@ Idea → PM validates → PM writes PRD → Design creates specs → Engineering
 **Output:** `/docs/product/design/platforms/[platform]/screens/[feature-name].md` (or `/screens/` if generic)
 
 **Includes:**
+
 - User goal + success metric
 - User flow (Mermaid diagram)
 - Detailed wireframes + component trees
@@ -93,44 +101,52 @@ Idea → PM validates → PM writes PRD → Design creates specs → Engineering
 ## Decision Points
 
 **Design lead decides autonomously:**
+
 - Layout, visual hierarchy, components
 - Navigation patterns, interactions
 - Microcopy, content structure, tone
 - Behavior triggers, friction points
 
 **Design lead asks you:**
+
 - Ambiguous requirements
 - Multiple valid approaches with tradeoffs
 - Industry compliance (HIPAA, financial, legal)
 
 **Design lead escalates:**
+
 - Missing requirements file
 - Privacy/compliance concerns
 
 ## File Locations
 
 **Inputs:**
+
 - Requirements: `/docs/product/requirements/[feature].md`
 - Design principles: `/docs/product/design/guides/principles.md`
 - Shared components: `/docs/product/design/shared/components/`
 
 **Outputs:**
+
 - Platform-specific: `/docs/product/design/platforms/[platform]/screens/[feature].md`
 - Generic: `/docs/product/design/screens/[feature].md`
 
 ## Tips
 
 **Skip steps if appropriate:**
+
 - Simple feature? Jump straight to `/design.specs`
 - Just need flow? Stop after `/design.flow`
 - Design is in your head? Tell agent "skip to specs, here's what I want..."
 
 **Iterate freely:**
+
 - "Add error state for network timeout"
 - "Change CTA copy to be more action-oriented"
 - "Show empty state with illustration, not just text"
 
 **Reference existing:**
+
 - "Use the same pattern as login screen"
 - "Apply design system from /shared/components"
 - "Match tone from onboarding flow"
