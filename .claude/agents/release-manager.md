@@ -188,6 +188,7 @@ git push                      # existing branch
 ## Pull Requests
 
 **Phase requirements:**
+
 - Discovery/POC: Optional (direct commits preferred)
 - MVP/Production: Required for main
 
