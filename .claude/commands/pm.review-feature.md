@@ -6,8 +6,8 @@ tags: [product, post-launch, pm, metrics, review]
 
 # Review Feature
 
-Use the Task tool to invoke the product-manager agent to review a launched feature's performance.
+Use the Task tool to invoke the founding-product-manager agent to review a launched feature's performance.
 
-`subagent_type: product-manager`
+`subagent_type: founding-product-manager`
 
 **Prompt**: "Review $ARGUMENTS post-launch (2-4 weeks after launch). Analyze performance vs target metrics, gather feedback, and recommend: Iterate / Expand / Pivot / Sunset. Write to `/docs/product/post-mortems/$ARGUMENTS-review.md`."

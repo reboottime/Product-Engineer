@@ -6,8 +6,8 @@ tags: [product, competitive, pm, market]
 
 # Analyze Competitors
 
-Use the Task tool to invoke the product-manager agent to research competitors, identify gaps, and provide strategic differentiation recommendations.
+Use the Task tool to invoke the founding-product-manager agent to research competitors, identify gaps, and provide strategic differentiation recommendations.
 
-`subagent_type: product-manager`
+`subagent_type: founding-product-manager`
 
 **Prompt**: "Analyze competitive landscape for $ARGUMENTS. Research competitors, identify market gaps, and write analysis to `/docs/product/competitive/$ARGUMENTS-analysis.md`."

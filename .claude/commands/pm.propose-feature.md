@@ -7,7 +7,7 @@ agent: product-manager, product-design-lead
 
 # Propose Feature
 
-Coordinate a collaborative evaluation between product-manager and product-design-lead to assess a feature idea and reach a decision.
+Coordinate a collaborative evaluation between founding-product-manager and product-design-lead to assess a feature idea and reach a decision.
 
 You are the facilitator. Follow this workflow:
 
@@ -16,7 +16,7 @@ You are the facilitator. Follow this workflow:
    CRITICAL: Invoke both agents IN PARALLEL using a single message with multiple Task tool calls. Do NOT invoke sequentially.
 
    **PM Agent - Independent Analysis:**
-   - Use Task tool with `subagent_type: product-manager`
+   - Use Task tool with `subagent_type: founding-product-manager`
    - Prompt: "TASK: Engage in at least 3 rounds of independent deliberation on this feature idea. Do NOT see Design's input yet.
 
    FEATURE: $ARGUMENTS
