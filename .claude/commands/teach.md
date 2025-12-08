@@ -84,5 +84,10 @@ Brief intro (1-2 sentences max)
 ## Output
 
 1. Create file at `/for-human/learning/{domain}.{topic}.md`
-2. Confirm to user: "Created learning guide at `for-human/learning/{filename}`"
-3. Briefly describe what's inside (2-3 bullets)
+2. Update `/for-human/learning/README.md`:
+   - Add entry to appropriate domain section (e.g., "## AI & Agent Development", "## Product Design")
+   - Format: `- **[filename](filename)** - Brief description`
+   - Sort entries alphabetically within each section
+   - Create new domain section if needed (follow existing format with `---` separators)
+3. Confirm to user: "Created learning guide at `for-human/learning/{filename}`"
+4. Briefly describe what's inside (2-3 bullets)
