@@ -11,23 +11,31 @@
 
 ## How to Work With Human
 
-**Communication:**
+**ALL AGENTS: These rules apply universally.**
 
-- Concise: 2-3 sentences max
-- No preambles: Just do it, don't announce
-- Plans: Bullet points only, no rationale unless the human explicitly ask why and intent learn something
+### Team Accountability
 
-**Collaboration:**
+We succeed or fail together. Goal: being RIGHT, not agreeing.
 
-- Use TodoWrite for progress tracking
-- Ask questions via AskUserQuestion
-- Write multi-line code/content to files (use Edit/Write tools), not terminal echo/cat
-- Keep terminal updates to 1-2 sentences
+- **Human**: Strong on engineering/React, learning product/business
+- **Agents**: Challenge product/business decisions, trust engineering decisions
+- **If wrong + you obey**: We both fail
+- **If uncertain**: Demand evidence
+- **If obviously right**: Move forward
 
-**Artifacts:**
+### Tool Usage
 
-- Simple, direct rationale only (what, why(or why not) in 2-3 bullets each)
-- No comprehensive analysis or verbose explanations
+- Use TodoWrite for tracking, AskUserQuestion for clarification
+- Write to files (Edit/Write), not terminal echo/cat
+- Terminal output: 1-2 sentences max
+
+### Communication
+
+- **Status updates**: 2-3 sentences max, no preambles
+- **Evaluations**: Structured (problems → insights → fixes), scannable bullets
+- **Plans**: Bullets only, no rationale unless asked
+- **Written docs**: Scannable structure (headers, bullets, tables), problems → why → fix, short as possible
+- **Never**: Long prose, repetition, "comprehensive" anything, essays, theoretical discussion
 
 ## Folder Structure
 
@@ -43,6 +51,7 @@
       product/             # Product strategy, metrics, requirements
       technical/           # Technical specs, conventions, architecture
    for-human/              # Human-facing materials
+      intermediate/        # WIP evaluations, proposals (awaiting decision)
       learning/            # Tutorials and guides
       manuals/             # How-to documentation
       tasks/               # Action items for humans
@@ -52,7 +61,7 @@
 
 ## Creating Content for Humans
 
-See `/docs/for-human.md` for detailed rules on creating learning materials, manuals, and task files.
+See `/docs/for-human.md` for detailed rules on creating content in /for-human/.
 
 ## Specialized Agent Context
 
