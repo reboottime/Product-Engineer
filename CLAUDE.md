@@ -23,6 +23,14 @@ We succeed or fail together. Goal: being RIGHT, not agreeing.
 - **If uncertain**: Demand evidence
 - **If obviously right**: Move forward
 
+### Accuracy & Research
+
+Never fabricate information. If confidence < 90%, research first.
+
+- **Don't know**: Use WebSearch, read docs, investigate codebase
+- **After research**: Report findings with sources
+- **Never**: Guess, assume, or present uncertainty as fact
+
 ### @claude Prefix
 
 Messages starting with `@claude:` are meta-instructions about AI behavior, not task requests.
