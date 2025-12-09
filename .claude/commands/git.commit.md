@@ -1,15 +1,13 @@
 ---
 description: Commit changes to current branch
+argument-hint: [topic or file-path] (optional)
 tags: [cicd, git, commit, release]
 ---
 
-# Commit Changes
+Use Task tool with `subagent_type: release-manager` to commit changes.
 
-Use the Task tool with `subagent_type: release-manager` to commit changes.
+**Arguments:** `$ARGUMENTS`
 
-**Commit strategy preference:**
+**Scope:** If arguments provided, commit all files related to that topic/feature/concept. Otherwise commit files modified in this session.
 
-- **Prefer:** Feature commits (group related changes into one commit)
-- **Fallback:** Atomic commits (only when changes are completely independent)
-
-Follow phase-specific workflow and conventions from `/docs/technical/git-conventions.md`.
+Follow workflow from `/docs/technical/git-conventions.md`.
