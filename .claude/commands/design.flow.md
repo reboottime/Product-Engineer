@@ -13,6 +13,7 @@ Use the Task tool to invoke the founding-product-design-lead agent to create a u
 **Prompt**: "Create a user flow diagram for $ARGUMENTS.
 
 **Process:**
+
 1. Read `/docs/product/requirements/$ARGUMENTS.md` (if exists, otherwise ask user for context)
 2. Extract user goal and success criteria
 3. Create markdown-formatted flow showing:
@@ -23,11 +24,15 @@ Use the Task tool to invoke the founding-product-design-lead agent to create a u
 4. Keep it high-level (5-10 steps max)
 
 **Output:**
-- Markdown-formatted user flow
-- Brief description of each step
-- Open questions for user (if any)
+
+- If platform-specific: save to `/docs/product/design/platforms/[platform]/flows/[feature-name].md`
+- If cross-platform: save to `/docs/product/design/flows/[feature-name].md`
+- Markdown-formatted user flow with:
+  - Brief description of each step
+  - Open questions for user (if any)
 
 **Do NOT:**
+
 - Create wireframes yet (that's /design.wireframe)
 - Write full spec (that's /design.specs)
 - Assume requirements - ask if unclear
