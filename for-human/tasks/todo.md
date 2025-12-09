@@ -29,8 +29,12 @@ See `/for-human/manuals/agentic-system-roadmap.md` for full roadmap.
 
 ### Release Manager Agent
 
-- [ ] feature commit vs atomic commit to real world engineering practice
+- [x] feature commit vs atomic commit to real world engineering practice
+- [ ] commands
+  - [] add pr
+  - [x]commit
 - [ ] colloberation between codebase agents
+- [ ] clear report format
 
 ### System Validation
 
