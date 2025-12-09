@@ -19,7 +19,11 @@ Use the Task tool to invoke the founding-product-design-lead agent to create low
 3. Show layout and hierarchy only (no detailed copy yet)
 4. Include component labels (buttons, inputs, cards, etc.)
 
-**Output format:**
+**Output:**
+
+- If platform-specific: save to `/docs/product/design/platforms/[platform]/wireframes/[feature-name].md`
+- If cross-platform: save to `/docs/product/design/wireframes/[feature-name].md`
+- Use this format per screen:
 
 ```
 ## Screen: [Name]
