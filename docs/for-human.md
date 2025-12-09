@@ -25,6 +25,7 @@ Use for: Evaluations, proposals, comparative analysis, draft recommendations
 Domains: `product`, `engineering`, `business`, `design`, etc.
 
 Examples:
+
 - `2025-12-09.product.mvp-feature-evaluation.md`
 - `2025-12-09.engineering.architecture-proposal.md`
 - `2025-12-09.business.market-analysis.md`
