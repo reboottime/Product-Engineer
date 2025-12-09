@@ -228,3 +228,62 @@ response = client.messages.create(
 - [Claude Code Subagents Docs](https://code.claude.com/docs/en/sub-agents.md#available-tools)
 - [Agent SDK Custom Tools](https://platform.claude.com/docs/en/agent-sdk/custom-tools.md)
 - [Claude API Tool Use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md)
+
+---
+
+## Part 3: System-Provided Context
+
+How Claude Code automatically injects environment information.
+
+### Environment Context (`<env>`)
+
+**Auto-injected at conversation start:**
+
+```xml
+<env>
+Working directory: /Users/kate/2026/product-engineer
+Is directory a git repo: Yes
+Platform: darwin
+OS Version: Darwin 24.6.0
+Today's date: 2025-12-09
+</env>
+```
+
+**Key fields:**
+- `Today's date`: Current system date (YYYY-MM-DD format)
+- `Working directory`: Current working directory path
+- `Platform`: OS platform (darwin, linux, win32)
+- `OS Version`: Full OS version string
+
+### Common Issue: Wrong Year in Web Searches
+
+**Problem:** Claude may use outdated year (2024) instead of current year (2025) in WebSearch queries.
+
+**Why it happens:**
+- Training data contains many 2024 examples
+- Creates bias toward using 2024 even when current year is 2025
+- Agent fails to check `<env>Today's date:</env>` before searching
+
+**Solution:** Add to `~/.claude/CLAUDE.md` (global config):
+
+```markdown
+## Accuracy & Research
+
+- **Before WebSearch**: Check `<env>Today's date:</env>` and use correct year in queries (never assume 2024)
+```
+
+**Impact:** Forces agent to explicitly check environment date before every WebSearch.
+
+**Examples:**
+
+```
+❌ Bad:  "React documentation 2024"
+✅ Good: "React documentation 2025"
+
+❌ Bad:  "latest Next.js features"
+✅ Good: "latest Next.js features 2025"
+```
+
+### Key Takeaway
+
+**System date is always available** in `<env>` tag - agents should reference it for time-sensitive operations (web searches, file timestamps, version queries).
