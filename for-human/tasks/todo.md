@@ -6,6 +6,7 @@ See `/for-human/manuals/agentic-system-roadmap.md` for full roadmap.
 
 ### Phase 1 Foundation Tasks
 
+- [] Instill the concept that time is irrelevant to Ai team members (product & Engineer & claude itself)
 - [ ] Review `/for-human/manuals/agentic-system-team.md` - validate team design matches your mental model
 - [x] clean up agent memory design doc
 - [] test memory design for agents
