@@ -25,7 +25,6 @@ Use for: Evaluations, proposals, comparative analysis, draft recommendations
 Domains: `product`, `engineering`, `business`, `design`, etc.
 
 Examples:
-
 - `2025-12-09.product.mvp-feature-evaluation.md`
 - `2025-12-09.engineering.architecture-proposal.md`
 - `2025-12-09.business.market-analysis.md`
@@ -63,6 +62,12 @@ Action items requiring human decision or follow-up.
 - Agents create topic-specific task files: `todo.setup.md`, `todo.testing.md`, `todo.[topic].md`
 - Keep files small and focused (better clarity and effectiveness)
 - Use same priority structure as todo.md (High/Medium/Low Priority)
+
+**Checkbox format (required):**
+
+- Use `- [ ]` for incomplete tasks, `- [x]` for completed
+- NEVER use emoji checkmarks (`✅`, `☑️`, etc.) - breaks `/tidy-todo` automation
+- Applies to all checklists in `/for-human/` files
 
 ## Content Standards
 
