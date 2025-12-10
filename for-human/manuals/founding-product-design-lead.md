@@ -22,10 +22,11 @@
 | **2** | `/design.wireframe [feature-name]` | Low-fidelity wireframes (2-4 screens) |
 | **3** | `/design.specs [feature-name]` | Full design specification for implementation |
 | **Review** | `/design.review [feature-name]` | Iterate on existing design |
+| **System** | `/design.design-system [platform]` | Create/update design tokens (colors, typography, spacing, motion) |
 
-**Use for:** UX design in markdown (ASCII wireframes, Mermaid flows). Applies behavior design principles.
+**Use for:** UX design in markdown (ASCII wireframes, Mermaid flows), design system tokens. Applies behavior design principles.
 
-**Won't do:** Visual design (colors, fonts), code implementation, marketing design
+**Won't do:** Code implementation, marketing design
 
 ## What It Needs
 
@@ -41,6 +42,7 @@
 | `design.wireframe` | Terminal output | ASCII wireframes, component labels, key actions |
 | `design.specs` | `/docs/product/design/platforms/[platform]/screens/[feature].md` OR `/docs/product/design/screens/[feature].md` | Complete spec: flow + wireframes + states + microcopy + interactions |
 | `design.review` | Updates existing spec | Version history, before/after, impact notes |
+| `design.design-system` | Shared: `/docs/product/design/shared/design-system/` Platform: `/docs/product/design/platforms/[platform]/design-tokens.md` | Design tokens (colors, typography, spacing, motion) + human review task |
 
 ## Design Process (Sequential)
 
@@ -96,6 +98,14 @@ Step 3: /design.specs → Save to /docs/product/design/
 | 5 | `/design.specs [feature]` | Complete spec saved to `/docs/product/design/` |
 | 6 | Human implements from spec | - |
 
+### Design System (When Needed)
+
+| Scenario | Command |
+|----------|---------|
+| New platform | `/design.design-system [platform]` |
+| Update shared tokens | `/design.design-system` (no args) |
+| After wireframes reveal token gaps | `/design.design-system [platform]` |
+
 ### Quick Design (Skip Steps)
 
 ```
@@ -115,9 +125,10 @@ Flow + wireframes ready? → Jump to /design.specs
 |------|------------------|-------------------|
 | **Screens** | `/docs/product/design/platforms/[platform]/screens/` | `/docs/product/design/screens/` |
 | **Shared Components** | `/docs/product/design/shared/components/` | Same |
+| **Design System** | `/docs/product/design/platforms/[platform]/design-tokens.md` | `/docs/product/design/shared/design-system/` |
 | **Guides** | `/docs/product/design/guides/` | Same |
 
-**Example platform values:** `chrome-extension`, `web-app`, `mobile-ios`, `mobile-android`
+**Example platform values:** `extension`, `web-app`, `mobile-ios`, `mobile-android`
 
 ## Collaboration with PM
 
@@ -150,6 +161,8 @@ Agent references these if they exist in `/docs/product/design/guides/principles.
 | Missing design principles | Agent uses standard UX principles |
 | Needs iteration | Use `/design.review [feature]` not `/design.specs` |
 | Wireframes too detailed | That's expected in step 3 (/design.specs), not step 2 |
+| Missing design tokens | Use `/design.design-system [platform]` to create |
+| Tokens need updating | Use `/design.design-system` to update shared or platform tokens |
 
 ## Version Control
 

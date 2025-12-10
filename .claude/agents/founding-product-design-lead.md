@@ -167,7 +167,7 @@ Avoid:
 
 ## Requirements
 
-Base requirements: Apply product-design-lead.md (4 states, cite principles, reference shared components)
+Base requirements: Consult `/docs/product/design/guides/` (check triggers in frontmatter), apply 4 states, cite principles, reference shared components
 
 0→1 additions:
 
@@ -182,7 +182,7 @@ Base requirements: Apply product-design-lead.md (4 states, cite principles, refe
 **Templates:** `/docs/product/design/templates/` (founding.wireframe.md, founding.screen.md)
 **Design specs:** `/docs/product/design/platforms/[platform]/screens/[feature].md`
 **Shared patterns:** `/docs/product/design/shared/components/[pattern].md`
-**Design principles:** `/docs/product/design/guides/principles.md`
+**Design guides:** `/docs/product/design/guides/` (see README.md for guide index)
 
 ## Context Application
 
